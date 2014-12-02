@@ -1,0 +1,116 @@
+<!-- introduction and survey entrance -->
+<div class="col-md-4">
+    <h2>Survey Title</h2>
+    <p>
+        Dear Chiropractor, thank you for your participation in this study. Herewith follows the study questionnaire. 
+    </p>
+    <hr>
+    <button type="button" class="btn btn-primary pull-right" ng-click="takeSurvey()" ng-hide="successInfo">Take the Survey</button>
+    <!-- success information/alert -->
+    <div class="alert alert-success alert-dismissable" ng-show="successInfo">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Thank you for your feedback!</strong>.
+    </div>
+    </div>
+</div>
+
+<!-- survey detail modal -->
+<div class="modal fade" id="survey" tabindex="-1" role="dialog" aria-labelledby="survey" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">DEMOGRAPHIC PROFILE</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h3>What is your age?</h3>
+                    <input type="text" ng-model="age" />
+                </div>
+                <div>
+                    <h3>On average how many hours do you practice per week?</h3>
+                    <input type="text" ng-model="hoursPracticed" />
+                </div>
+                <div>
+                    <h3>Where is your current practice located?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="practiceLocation" value="Rural">Rural<br/>
+                        <input type="radio" ng-model="practiceLocation" value="Suburban">Suburban<br/>
+                        <input type="radio" ng-model="practiceLocation" value="Urban">Urban
+                    </div>
+                </div>
+                <div>
+                    <h3>What is your current practice type?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="practiceType" value="groupPractice">Group practice<br/>
+                        <input type="radio" ng-model="practiceType" value="Individual">Individual<br/>
+                        <input type="radio" ng-model="practiceType" value="Multidisciplinary">Multidisciplinary<br />
+                        <input type="radio" ng-model="practiceType" value="Partnership">Partnership
+                    </div>
+                </div>
+                <div>
+                    <h3>Where is your ethnicity?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="ethnicity" value="African">African<br/>
+                        <input type="radio" ng-model="ethnicity" value="Asian">Asian<br/>
+                        <input type="radio" ng-model="ethnicity" value="Coloured">Coloured<br />
+                        <input type="radio" ng-model="ethnicity" value="White">White<br />
+                        <input type="radio" ng-model="ethnicity" value="Other">Other
+                    </div>
+                </div>
+                <div>
+                    <h3>Where is your first language?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="language" value="Afrikaans">Afrikaans<br/>
+                        <input type="radio" ng-model="language" value="English">English<br/>
+                        <input type="radio" ng-model="language" value="IsiNdebele">IsiNdebele<br />
+                        <input type="radio" ng-model="language" value="IsiSwati">IsiSwati<br />
+                        <input type="radio" ng-model="language" value="IsiXhosa">IsiXhosa<br />
+                        <input type="radio" ng-model="language" value="IsiZulu">IsiZulu<br />
+                        <input type="radio" ng-model="language" value="Sepedi">Sepedi<br />
+                        <input type="radio" ng-model="language" value="Sesotho">Sesotho<br />
+                        <input type="radio" ng-model="language" value="Setswana">Setswana<br />
+                        <input type="radio" ng-model="language" value="Tshivenda">Tshivenda<br />
+                        <input type="radio" ng-model="language" value="Xitsonga">Xitsonga<br />
+                        If other, please specify: <input type="text" ng-model="language" value="Other">
+                    </div>
+                </div>
+                <div>
+                    <h3>What is your gender?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="gender" value="Female">Female<br/>
+                        <input type="radio" ng-model="gender" value="Male">Male
+                    </div>
+                </div>
+                <div>
+                    <h3>What Chiropractic institution did you graduate from?</h3>
+                    <input type="text" ng-model="graduatingInstitute" />
+                </div>
+                <div>
+                    <h3>What is your highest academic qualification?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="qualification" value="Matric">Matric<br/>
+                        <input type="radio" ng-model="qualification" value="Diploma">Diploma<br />
+                        <input type="radio" ng-model="qualification" value="University Degree">University Degree<br />
+                        <input type="radio" ng-model="qualification" value="Other">Other
+                    </div>
+                </div>
+                <div>
+                    <h3>How many years have you been actively practicing?</h3>
+                    <div class="radio">
+                        <input type="radio" ng-model="yearsPracticing" value="<5">< 5<br/>
+                        <input type="radio" ng-model="yearsPracticing" value="5-10">5 - 10<br/>
+                        <input type="radio" ng-model="yearsPracticing" value="11-20">11 - 20<br />
+                        <input type="radio" ng-model="yearsPracticing" value="21-30">21 - 30<br />
+                        <input type="radio" ng-model="yearsPracticing" value="31-40">31 - 40<br />
+                        <input type="radio" ng-model="yearsPracticing" value=">40">> 40
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addSurvey()">Send results</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
