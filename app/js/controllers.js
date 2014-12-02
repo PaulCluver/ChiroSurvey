@@ -79,7 +79,7 @@ angular.module('myApp.controllers', ['ngRoute'])
             $scope.err = err||null;
             typeof(callback) === 'function' && callback(err, user);
             if (!$scope.err) {
-                $location.path('/result')
+                $location.path('/survey')
             }
             });
         };
@@ -92,6 +92,7 @@ angular.module('myApp.controllers', ['ngRoute'])
       angularFire(FBURL+'/users/'+$scope.auth.id, $scope, 'user', {});
 
       $rootScope.logout = function() {
+        console.log('init');
          loginService.logout('/survey');
       };
 

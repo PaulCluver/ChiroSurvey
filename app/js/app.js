@@ -30,6 +30,7 @@ angular.module('myApp',
 
    // establish authentication
    .run(['angularFireAuth', 'FBURL', '$rootScope', function(angularFireAuth, FBURL, $rootScope) {
+      console.log('angularFireAuth: ', angularFireAuth);
       angularFireAuth.initialize(FBURL, {scope: $rootScope, name: "auth", path: '/login'});
       $rootScope.FBURL = FBURL;
    }]);
